@@ -35,3 +35,8 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### frontend env ###
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
