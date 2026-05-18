@@ -15,8 +15,6 @@ public class RestaurantResponse {
     private Double latitude;
     private Double longitude;
 
-    private Integer likeCount;
-
     private RestaurantResponse(Restaurant restaurant){
         this.id = restaurant.getId();
         this.name = restaurant.getName();
@@ -25,7 +23,6 @@ public class RestaurantResponse {
         this.description = restaurant.getDescription();
         this.latitude = restaurant.getLatitude();
         this.longitude = restaurant.getLongitude();
-        this.likeCount = restaurant.getLikeCount();
     }
 
     public static RestaurantResponse from(Restaurant restaurant){

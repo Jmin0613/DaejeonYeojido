@@ -31,14 +31,4 @@ public class RestaurantService {
         return RestaurantResponse.from(restaurant);
     }
 
-    // 추천하기
-    public RestaurantResponse increaseLikeCount(Long restaurantId){
-        Restaurant restaurant = restaurantRepository.findById(restaurantId)
-                .orElseThrow(() -> new IllegalStateException("해당 맛집을 찾을 수 없습니다."));
-
-        restaurant.increaseLikeCount();
-
-        return RestaurantResponse.from(restaurant);
-    }
-
 }

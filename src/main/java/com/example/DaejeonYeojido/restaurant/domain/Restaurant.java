@@ -38,9 +38,6 @@ public class Restaurant {
     @Column(nullable = false)
     private Double longitude; // 경도(x좌표)
 
-    @Column(nullable = false)
-    private Integer likeCount; // 추천수
-
     @CreatedDate
     private LocalDateTime createdAt; //생성일
     @LastModifiedDate
@@ -62,7 +59,6 @@ public class Restaurant {
         this.description = description;
         this.latitude = latitude;
         this.longitude = longitude;
-        this.likeCount = 0; //기본 생성값
     }
 
     // 맛집 등록
@@ -96,11 +92,6 @@ public class Restaurant {
             this.longitude = longitude;
         }
 
-    }
-
-    // 추천
-    public void increaseLikeCount(){
-        likeCount++;
     }
 
 }

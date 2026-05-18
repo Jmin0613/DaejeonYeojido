@@ -26,9 +26,4 @@ public class RestaurantController {
         return ResponseEntity.ok(restaurantService.getRestaurant(restaurantId));
     }
 
-    // 추천수
-    @PostMapping("/{restaurantId}/like")
-    public ResponseEntity<RestaurantResponse> likeRestaurant(@PathVariable Long restaurantId){
-        return ResponseEntity.ok(restaurantService.increaseLikeCount(restaurantId));
-    }
 }
