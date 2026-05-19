@@ -1,3 +1,24 @@
+.app-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 32px 40px;
+}
+
+.app-page h1 {
+  margin: 0 0 8px;
+  text-align: center;
+  font-size: 42px;
+  font-weight: 700;
+}
+
+.map-title {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 500;
+  color: #555;
+}
+
 .restaurant-detail {
   width: 340px;
   min-height: 500px;
@@ -35,13 +56,16 @@
 }
 
 .map-section {
-  flex: 1;
+  flex: 1 1 0;
+  width: 100%;
+  min-width: 0;
 }
 
 .map-container {
   width: 100%;
+  min-width: 320px;
   height: 500px;
-  border-radius: 12px;
+  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -126,9 +150,11 @@
 }
 
 .main-layout {
+  width: min(1180px, calc(100% - 48px));
+  margin: 32px auto 0;
   display: flex;
-  gap: 16px;
-  align-items: flex-start;
+  gap: 20px;
+  align-items: stretch;
 }
 
 #root,
@@ -137,4 +163,80 @@
 .map-container {
   border-left: none;
   border-right: none;
+}
+
+.restaurant-detail {
+  width: 340px;
+  min-height: 500px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  background-color: white;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.map-section {
+  flex: 1;
+  min-width: 0;
+}
+
+.map-container {
+  width: 100%;
+  height: 500px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 18px;
+}
+
+.detail-item {
+  margin-top: 14px;
+}
+
+.detail-item p {
+  margin: 6px 0 0;
+  line-height: 1.5;
+}
+
+.google-map-link {
+  display: block;
+  margin-top: 16px;
+  text-align: center;
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.google-map-link:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .app-page {
+    padding: 24px 16px;
+  }
+
+  .main-layout {
+    flex-direction: column;
+  }
+
+  .restaurant-detail {
+    width: 100%;
+  }
+
+  .map-container {
+    height: 420px;
+  }
 }
