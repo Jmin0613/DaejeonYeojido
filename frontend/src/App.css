@@ -41,22 +41,70 @@
   align-items: center;
   gap: 6px;
   cursor: pointer;
-  font-weight: 700;
-  color: #d93025;
   white-space: nowrap;
+  transition: transform 0.2s ease;
 }
 
 .marker-pin {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   background-color: #d93025;
   border-radius: 50% 50% 50% 0;
   transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.marker-dot {
+  width: 8px;
+  height: 8px;
+  background-color: white;
+  border-radius: 50%;
+  transform: rotate(45deg);
 }
 
 .restaurant-marker span {
   padding: 4px 8px;
   border-radius: 999px;
   background-color: white;
+  color: #d93025;
+  font-weight: 700;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* 선택된 마커 */
+.selected-marker {
+  transform: scale(1.12);
+}
+
+.selected-marker .marker-pin {
+  background-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.2);
+}
+
+.selected-marker .marker-dot {
+  background-color: white;
+}
+
+.selected-marker span {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.35);
+}
+
+.google-map-link {
+  display: block;
+  margin-top: 220px;
+  text-align: center;
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.google-map-link:hover {
+  text-decoration: underline;
 }
