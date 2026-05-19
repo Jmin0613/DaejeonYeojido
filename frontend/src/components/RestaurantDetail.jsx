@@ -13,6 +13,14 @@ function RestaurantDetail({restaurant}) {
         <aside className="restaurant-detail">
             <h2>{restaurant.name}</h2>
 
+            {restaurant.imageUrl && (
+                <img
+                    className="restaurant-image"
+                    src={restaurant.imageUrl}
+                    alt={`${restaurant.name} 사진`}
+                />
+            )}
+
             <div className="detail-item">
                 <strong>주소 </strong>
                 <p>{restaurant.address}</p>

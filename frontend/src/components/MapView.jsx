@@ -9,8 +9,6 @@ function MapView({restaurants = [], onSelectRestaurant, selectedRestaurant}) {
 
     return (
         <section className="map-section">
-            <h2>대전 맛집 지도</h2>
-
             <div className="map-container">
                 <Map
                     defaultCenter={daejeonCenter}
@@ -35,9 +33,7 @@ function MapView({restaurants = [], onSelectRestaurant, selectedRestaurant}) {
                                     isSelected ? 'selected-marker' : ``
                                 }`}
                                 >
-                                    <div className="restaurant-marker">
-                                        <div className="marker-pin" />
-                                    </div>
+                                    <div className="marker-pin" />
                                     <span>{restaurant.name}</span>
                                 </div>
                             </AdvancedMarker>

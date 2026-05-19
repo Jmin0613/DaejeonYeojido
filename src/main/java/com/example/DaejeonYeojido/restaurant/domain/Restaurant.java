@@ -33,6 +33,9 @@ public class Restaurant {
     @Column(nullable = false)
     private String description; //한줄평(추천 이유)
 
+    @Column(length = 500)
+    private String imageUrl; // 음식 사진
+
     @Column(nullable = false)
     private Double latitude; // 위도(y좌표)
     @Column(nullable = false)
@@ -44,7 +47,7 @@ public class Restaurant {
     private LocalDateTime updatedAt; //수정일
 
     private Restaurant(String name, String address, FoodCategory foodCategory,
-                       String description, Double latitude, Double longitude){
+                       String description, Double latitude, Double longitude, String imageUrl){
         if(name == null || name.isBlank()){ throw new IllegalStateException("맛집 이름을 입력해주세요."); }
         if(address == null || address.isBlank()){ throw new IllegalStateException("주소를 입력해주세요."); }
         if(foodCategory == null){ throw new IllegalStateException("음식 종류를 입력해주세요."); }
@@ -59,39 +62,15 @@ public class Restaurant {
         this.description = description;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.imageUrl = imageUrl;
     }
 
     // 맛집 등록
     public static Restaurant createRestaurant(String name, String address, FoodCategory foodCategory,
-                             String description, Double latitude, Double longitude){
+                             String description, Double latitude, Double longitude, String imageUrl){
         return new Restaurant(
-                name, address, foodCategory, description, latitude, longitude
+                name, address, foodCategory, description, latitude, longitude, imageUrl
         );
-    }
-
-    // 맛집 수정
-    public void updateRestaurant(String name, String address, FoodCategory foodCategory,
-                                 String description, Double latitude, Double longitude){
-        if(name != null && !name.isBlank()){
-            this.name = name;
-        }
-        if(address != null && !address.isBlank()){
-            this.address = address;
-        }
-        if(foodCategory != null){
-            this.foodCategory = foodCategory;
-        }
-        if(description != null && !description.isBlank()){
-            this.description = description;
-        }
-
-        if(latitude != null){
-            this.latitude = latitude;
-        }
-        if(longitude != null){
-            this.longitude = longitude;
-        }
-
     }
 
 }

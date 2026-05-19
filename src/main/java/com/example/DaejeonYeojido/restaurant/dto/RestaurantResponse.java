@@ -11,6 +11,7 @@ public class RestaurantResponse {
     private String address;
     private FoodCategory foodCategory;
     private String description;
+    private String imageUrl;
 
     private Double latitude;
     private Double longitude;
@@ -23,6 +24,7 @@ public class RestaurantResponse {
         this.description = restaurant.getDescription();
         this.latitude = restaurant.getLatitude();
         this.longitude = restaurant.getLongitude();
+        this.imageUrl = restaurant.getImageUrl();
     }
 
     public static RestaurantResponse from(Restaurant restaurant){

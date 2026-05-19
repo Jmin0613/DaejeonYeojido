@@ -1,28 +1,37 @@
-.main-layout {
-  display: flex;
-  gap: 16px;
-  align-items: stretch;
-}
-
 .restaurant-detail {
-  width: 300px;
+  width: 340px;
+  min-height: 500px;
   padding: 20px;
   border: 1px solid #ddd;
   border-radius: 12px;
   background-color: white;
   text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 .restaurant-detail h2 {
   margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.restaurant-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 18px;
 }
 
 .detail-item {
-  margin-top: 16px;
+  margin-top: 14px;
 }
 
 .detail-item p {
   margin: 6px 0 0;
+  line-height: 1.5;
 }
 
 .map-section {
@@ -98,7 +107,7 @@
 
 .google-map-link {
   display: block;
-  margin-top: 220px;
+  margin-top: 16px;
   text-align: center;
   color: #1a73e8;
   text-decoration: none;
@@ -107,4 +116,25 @@
 
 .google-map-link:hover {
   text-decoration: underline;
+}
+
+.map-title {
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.main-layout {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+#root,
+.app-page,
+.map-section,
+.map-container {
+  border-left: none;
+  border-right: none;
 }

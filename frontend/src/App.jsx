@@ -56,6 +56,7 @@ function App() {
       <APIProvider apiKey={import.meta.env.VITE_GOOGLE_MAPS_API_KEY}>
         <main className="app-page">
           <h1>대전여지도</h1>
+          <h2 className="map-title">근 20년차 대전인의 신뢰 맛지도</h2>
 
           <div className="main-layout">
             <RestaurantDetail restaurant={selectedRestaurant} />
